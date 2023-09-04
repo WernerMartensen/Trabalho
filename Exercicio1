@@ -1,0 +1,19 @@
+print('Bem-vindo a loja do Werner Martensen')
+valor_produto = float(input('Entre com o Valor desejado: '))
+qtd_produto = int(input('Entre com a quantidade desejada:'))
+desconto_produto = 0
+if qtd_produto <= 4: # Outra Maneira if qtd_produto < 5:
+  desconto_produto = 0.00
+elif 5 <= qtd_produto < 20: # (qtd_produto>= 5) and (qntd_produto < 20):
+  desconto_produto = 0.03 #valores do desconto 3% 0.03 / 100% 1.0:
+elif 20 <= qtd_produto < 100: # (qtd_produto>= 20) and (qntd_produto < 100):
+  desconto_produto = 0.06 #valores do desconto 6% 0.06 / 100% 1.0:
+else: 
+  desconto_produto = 0.10 # 10% = 0.10
+
+
+total_sem_desconto = valor_produto * qtd_produto
+print('o valor total SEM desconto é de: R$ {:.2f}' .format(total_sem_desconto))
+# print(f'o valor total sem desconto é de: R$ ' .format(total_sem_desconto))
+total_com_desconto = total_sem_desconto - total_sem_desconto * desconto_produto
+print('o valor total COM desconto é de: R$ {:.2f}' .format(total_com_desconto))
