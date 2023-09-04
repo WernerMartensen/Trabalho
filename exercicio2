@@ -1,0 +1,60 @@
+# A. Realizar o print da mensagem de boas-vindas
+print('------------------------------------------')
+print('Bem-vindo a Sorveteria do Werner Martensen')
+print('------------------------------------------')
+
+
+
+valor_total = 0
+while True:  # Laço principal
+
+
+    # B. Entrada do sabor e número de bolas
+    sabor = input("Digite o sabor (tr - tradicional, pr - premium, es - especial): ")
+    # D. Validação do sabor
+    if sabor not in ['tr', 'pr', 'es']:
+        print("Sabor de Sorvete Inválido.")
+        continue  # Reinicia o laço
+  
+    num_bolas = int(input("Digite o número de bolas de sorvete desejado (1, 2, 3): "))
+    # C. Validação do número de bolas
+    if num_bolas not in [1, 2, 3]:
+        print("Quantidade de Bolas de Sorvete Inválida.")
+        continue  # Reinicia o laço
+
+
+
+    # Cálculo do preço (nessa iteração)
+    preco = 0
+    if num_bolas == 1:
+      if sabor == 'tr':
+        preco = 6
+      elif sabor == 'pr':
+        preco = 7
+      elif sabor == 'es':
+        preco = 8
+    elif num_bolas == 2:
+      if sabor == 'tr':
+        preco = 11
+      elif sabor == 'pr':
+        preco = 13
+      elif sabor == 'es':
+        preco = 15
+    elif num_bolas == 3:
+      if sabor == 'tr':
+        preco = 15
+      elif sabor == 'pr':
+        preco = 18
+      elif sabor == 'es':
+        preco = 21
+
+
+    valor_total = valor_total + preco
+    # E1. Pergunta se o cliente deseja pedir mais
+    mais_pedidos = input("Deseja pedir mais alguma coisa? (sim/não): ")
+    if not (mais_pedidos.lower() == 'sim' or mais_pedidos.lower() == 's'):
+        break  # Encerra o laço se o cliente não quiser mais pedidos
+
+
+ # E2. Saída de console com pedido
+print(f"Valor total: R${valor_total:.2f}\nObrigado por escolher a Sorveteria do Werner! Volte sempre!")
